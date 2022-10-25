@@ -89,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               }
                               return null;
                             },
-                            icon: Icons.person_2_outlined,
+                            icon: Icons.person_outlined,
                           ),
                           AppFormField(
                             'lastname',

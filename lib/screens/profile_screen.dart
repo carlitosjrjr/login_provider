@@ -104,7 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           }
                           return null;
                         },
-                        icon: Icons.person_2_outlined,
+                        icon: Icons.person_outlined,
                       ),
                       AppFormField(
                         'lastname',

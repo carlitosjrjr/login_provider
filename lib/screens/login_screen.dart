@@ -28,6 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     loadSharedPreferences();
+    int currentNumberDay = 25;
+    int currentNumberMonth = 10;
+    int operation = currentNumberDay + 1 - 1 + 555 - 45 + currentNumberMonth;
+    debugPrint("yesterdar number day: ${operation.toInt()}");
     super.initState();
   }
 
@@ -76,8 +80,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     loginProvider = Provider.of<LoginProvider>(context);
     userProvider = Provider.of<UserProvider>(context);
-
-    
 
     return Scaffold(
       body: SingleChildScrollView(
