@@ -12,6 +12,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   UserProvider userProvider = UserProvider();
+  final List<String> buttons=[
+    'C','/','*','DEL',
+    '7','8','9','-',
+    '4','5','6','+',
+    '1','2','3','%',
+    '0','.','ANS','=',
+    
+  ];
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context).size;
@@ -28,9 +36,26 @@ class _HomeScreenState extends State<HomeScreen> {
               : Container(),
           Flexible(
             flex: 3,
-            child: Center(
-              // ignore: prefer_interpolation_to_compose_strings
-              child: Text('Bienvenido ' + name + ' a la aplicacion'),
+            child: Scaffold(
+              backgroundColor: Color.fromARGB(75, 145, 130, 160),
+              body: Column(
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Container(),
+                  ),
+                  Expanded(
+                    flex: 10,
+                    
+                    child: Container(
+                      child:GridView.builder(itemCount: buttons.length,physics: const NeverScrollableScrollPhysics(), gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4), itemBuilder: (BuildContext context, int index) {
+                        return MyButtons(buttonText: buttons[index],
+                        color: Colors.blueGrey,
+                        textColor: Colors.white,);
+                      })),
+                      ),
+                ],
+              ),
             ),
           ),
         ],
